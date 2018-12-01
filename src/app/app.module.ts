@@ -10,6 +10,7 @@ import { AppareilsPage } from '../pages/appareils/appareils';
 import { SingleAppareilsPage } from '../pages/appareils/single-appareils/single-appareils';
 import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
+import { AppareilsService } from '../services/appareils.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     StatusBar,
     SplashScreen,
     TabsPage,
+    AppareilsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
