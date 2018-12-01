@@ -5,11 +5,9 @@
 </ion-header>
 
 <ion-content padding>
-    <p>Liste Appareils</p>
-    <button ion-button (click)="onLoadAppareil('Machine à laver')">Machine à laver</button>
-    <button ion-button (click)="onLoadAppareil('TV')">TV</button>
+    <ion-list>
+        <button ion-item *ngFor="let appareil of appareilsList" (click)="onLoadAppareil(appareil)">
+            {{ appareil.name }}
+        </button>
+    </ion-list>
 </ion-content>
-
-<ion-footer padding>
-    <p>Footer</p>
-</ion-footer>
