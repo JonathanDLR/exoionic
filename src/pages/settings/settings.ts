@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from 'ionic-angular';
+import { AlertController, MenuController } from 'ionic-angular';
 
 @Component({
   selector: 'page-settings',
@@ -7,7 +7,8 @@ import { AlertController } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController,
+              private menuController: MenuController) {}
 
   onToggleLights() {
     let alert = this.alertController.create({
@@ -25,5 +26,9 @@ export class SettingsPage {
       ]
     });
     alert.present();
+  }
+
+  onToggleMenu() {
+    this.menuController.open();
   }
 }
