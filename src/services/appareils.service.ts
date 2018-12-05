@@ -10,7 +10,9 @@ export class AppareilsService {
                 'Temps de lavage: 2h',
                 'Conso: 173Kwh/an'
             ],
-            isOn: true
+            isOn: true,
+            startTime: '',
+            endTime: ''
         },
         {
             name: 'TV',
@@ -18,7 +20,9 @@ export class AppareilsService {
                 'Dimensions: 40 pouces',
                 'Conso: 22Kwh/an'
             ],
-            isOn: true
+            isOn: true,
+            startTime: '',
+            endTime: ''
         },
         {
             name: 'Ordi',
@@ -26,8 +30,13 @@ export class AppareilsService {
                 'Marque: MSI',
                 'Conso: 500Kwh/an'
             ],
-            isOn: false
+            isOn: false,
+            startTime: '',
+            endTime: ''
         }
     ];
     
+    addAppareil(appareil: Appareil) {
+        this.appareilsList.push(appareil);
+    }
 }

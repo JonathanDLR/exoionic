@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { SingleAppareilsPage } from './single-appareils/single-appareils';
-import { ModalController, MenuController } from 'ionic-angular';
+import { ModalController, MenuController, NavController } from 'ionic-angular';
 import { AppareilsService } from '../../services/appareils.service';
 import { Appareil } from '../../models/Appareil';
+import { AppareilFormPage } from './appareil-form/appareil-form';
 
 @Component({
     selector: 'page-appareils',
@@ -14,7 +15,8 @@ export class AppareilsPage {
 
     constructor(private modalController: ModalController,
                 private appareilsService: AppareilsService,
-                private menuController: MenuController) {}
+                private menuController: MenuController,
+                private navController: NavController) {}
 
     ionViewWillEnter() {
         this.appareilsList = this.appareilsService.appareilsList.slice();
@@ -27,5 +29,9 @@ export class AppareilsPage {
 
     onToggleMenu() {
         this.menuController.open();
+    }
+
+    onNewAppareil() {
+        this.navController.push(AppareilFormPage);
     }
 }
